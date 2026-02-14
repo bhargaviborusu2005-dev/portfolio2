@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhargavi Portfolio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: black;
+  color: #eee;
+  overflow-x: hidden;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 100vh;
+  background: #0b0b0b;
+  border-right: 1px solid #222;
+  padding: 20px;
+  text-align: center;
+  z-index: 10;
+}
+
+/* ✅ PERFECT OVAL PROFILE IMAGE */
+.profile-pic {
+  width: 150px;          /* Same width */
+  height: 150px;         /* Same height */
+  border-radius: 50%;    /* Perfect circle */
+  object-fit: cover;
+
+  margin: 10px auto 15px;
+  display: block;
+
+  border: 3px solid #ff4d4d;
+  box-shadow: 0 0 18px rgba(255, 77, 77, 0.7);
+}
+.sidebar h3 {
+  color: #efb924;
+  margin-bottom: 20px;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: none;
+  border: none;
+  color: #bbb;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+  background: #e31b05;
+  color: white;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  margin-left: 240px;
+  position: relative;
+}
+
+/* ===== PAGE ANIMATION ===== */
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 100vh;
+  padding: 40px;
+
+  opacity: 0;
+  transform: translateY(25px);
+  pointer-events: none;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.page.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ===== BACKGROUNDS ===== */
+#home {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+  url("images/flower.jpg");
+}
+
+#about {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+  url("images/bac.jpg");
+}
+
+#skills {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+  url("images/bac.jpg");
+}
+
+#projects {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+  url("images/bac.jpg");
+}
+
+#contact {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+  url("images/bac.jpg");
+}
+
+/* ===== HEADINGS ===== */
+h1, h2 {
+  color: #ff4d4d;
+  margin-bottom: 15px;
+}
+
+/* ===== GLASS CARD ===== */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+
+  padding: 25px;
+  border-radius: 16px;
+  max-width: 720px;
+}
+
+ul {
+  margin-left: 20px;
+}
+li {
+  margin-bottom: 6px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <img src="C:\Users\HP\OneDrive\Pictures\favs\WhatsApp Image 2026-01-30 at 19.31.17.jpeg" class="profile-pic" alt="Bhargavi">
+  <h3>Bhargavi Borusu</h3>
+
+  <button class="active" onclick="showPage('home', this)">Home</button>
+  <button onclick="showPage('about', this)">About</button>
+  <button onclick="showPage('skills', this)">Skills</button>
+  <button onclick="showPage('projects', this)">Projects</button>
+  <button onclick="showPage('contact', this)">Contact</button>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <div id="home" class="page active">
+    <h1>Bhargavi Devi Sree Saranya Borusu</h1>
+    <p>B.Sc Computer Science | Aditya Degree College</p><br>
+
+    <div class="card">
+      <h2>Career Objective</h2>
+      <p>
+        Motivated and detail-oriented graduate seeking an entry-level position
+        where I can apply my technical knowledge and problem-solving skills
+        to contribute to organizational growth.
+      </p>
+    </div>
+  </div>
+
+  <div id="about" class="page">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        I am a final-year Computer Science student at Aditya Degree College,
+        Amalapuram, passionate about web development and emerging IT technologies.
+      </p>
+    </div>
+  </div>
+
+  <div id="skills" class="page">
+    <h2>Skills</h2>
+    <div class="card">
+      <h3>Technical Skills</h3>
+      <ul>
+        <li>Python</li>
+        <li>HTML & CSS</li>
+        <li>SQL</li>
+        <li>MS Word, Excel, PowerPoint</li>
+      </ul>
+
+      <h3 style="margin-top:15px;">Soft Skills</h3>
+      <ul>
+        <li>Communication</li>
+        <li>Time Management</li>
+        <li>Leadership</li>
+        <li>Active Listening</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="projects" class="page">
+    <h2>Projects & Certificates</h2>
+    <div class="card">
+      <p>Community Servicew Project</p>
+      <p>Personal Portfolio Website</p>
+
+      <h3 style="margin-top:15px;">Certificates</h3>
+      <ul>
+        <li>Python AI&Ml - ULearn</li>
+        <li>Python Essentials - Aditya UNiversity</li>
+        <li>Microsoft Generative AI </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="contact" class="page">
+    <h2>Contact</h2>
+    <div class="card">
+      <p><b>Email:</b> bhargaviborusu2005@gmail.com</p>
+      <p><b>LinkedIn:</b> linkedin.com/in/bhargaviborusu</p>
+      <p><b>GitHub:</b> github.com/bhargaviborusu2005-dev</p>
+      <p><b>Phone:</b> +91 8688235553</p>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15303.761479850195!2d81.82159469643283!3d16.4785567981866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37dddc138a2c2f%3A0x84ef450e2cab44c2!2sRazole%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1769868142815!5m2!1sen!2sin" width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p class="text-xs text-gray-500 mt-4">
+          © 2026 Bhargavi. All rights reserved.
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showPage(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+
+  document.querySelectorAll('.sidebar button')
+    .forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
